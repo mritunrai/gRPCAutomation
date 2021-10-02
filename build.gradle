@@ -1,19 +1,88 @@
-plugins {
-    id 'java'
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.16'
+
+    }
 }
 
-group 'org.example'
+plugins {
+    id 'java'
+    id 'org.jetbrains.kotlin.jvm' version '1.3.72'
+    id "com.google.protobuf" version "0.8.8"
+}
+
+ext {
+    grpcVersion = "1.39.0"
+    protoVersion = "3.17.3"
+}
+
+group 'grpc_testing'
 version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
 }
 
-dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+sourceCompatibility = 11
+
+compileTestJava {
+    sourceCompatibility = '11'
+    targetCompatibility = '11'
+
 }
 
-test {
-    useJUnitPlatform()
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.0'
+
+    testImplementation group: 'org.testng', name: 'testng', version: '7.4.0'
+
+    implementation "io.grpc:grpc-protobuf:${grpcVersion}"
+    implementation "io.grpc:grpc-stub:${grpcVersion}"
+    implementation "io.grpc:grpc-all:${grpcVersion}"
+    implementation group: 'javax.annotation', name: 'javax.annotation-api', version: '1.3.2'
+
+    runtimeOnly "io.grpc:grpc-netty-shaded:${grpcVersion}"
+
+    testImplementation "io.grpc:grpc-testing:${grpcVersion}"
+}
+
+sourceSets {
+    main {
+        proto {
+            srcDir 'proto'
+        }
+    }
+}
+protobuf {
+    protoc {
+        artifact = 'com.google.protobuf:protoc:3.4.0'
+    }
+    plugins {
+        grpc {
+            artifact = "io.grpc:protoc-gen-grpc-java:1.39.0"
+        }
+    }
+    generateProtoTasks {
+        all()*.plugins {
+            grpc {}
+        }
+    }
+    generatedFilesBaseDir = "$projectDir/src/main/java/generated"
+}
+
+clean {
+    delete "$projectDir/src/generated"
+}
+
+javadoc {
+    source = "$projectDir/src/generated/main"
+    include("**/*.java")
+}
+
+task RunGRPCTests(type: Test) {
+    useTestNG()
 }
