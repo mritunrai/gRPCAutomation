@@ -13,7 +13,7 @@ message Book {
 }
 
 message BookResponse {
-  string message = 1;
+  string message = 1 ;
   string response_code = 2;
 }
 
