@@ -44,6 +44,7 @@ dependencies {
     implementation "io.grpc:grpc-stub:${grpcVersion}"
     implementation "io.grpc:grpc-all:${grpcVersion}"
     implementation group: 'javax.annotation', name: 'javax.annotation-api', version: '1.3.2'
+    compileOnly 'org.apache.tomcat:annotations-api:6.0.53' // necessary for Java 9+
 
     runtimeOnly "io.grpc:grpc-netty-shaded:${grpcVersion}"
 
@@ -71,17 +72,18 @@ protobuf {
             grpc {}
         }
     }
-    generatedFilesBaseDir = "$projectDir/src/main/java/generated"
+    generatedFilesBaseDir = "$projectDir/src/main/generated"
 }
 
 clean {
-    delete "$projectDir/src/generated"
+    delete "$projectDir/src/main/generated"
 }
 
-javadoc {
-    source = "$projectDir/src/generated/main"
-    include("**/*.java")
-}
+
+//javadoc {
+//    source = "$projectDir/src/generated/main"
+//    include("**/*.java")
+//}
 
 task RunGRPCTests(type: Test) {
     useTestNG()

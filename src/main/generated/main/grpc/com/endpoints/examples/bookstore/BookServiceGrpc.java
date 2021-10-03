@@ -1,4 +1,4 @@
-package com.book.grpc;
+package com.endpoints.examples.bookstore;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
@@ -11,32 +11,32 @@ public final class BookServiceGrpc {
 
   private BookServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "book.BookService";
+  public static final String SERVICE_NAME = "examples.bookstore.BookService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.book.grpc.GetBookRequest,
-      com.book.grpc.BookResponse> getGetBookMethod;
+  private static volatile io.grpc.MethodDescriptor<com.endpoints.examples.bookstore.GetBookRequest,
+      com.endpoints.examples.bookstore.BookResponse> getGetBookMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "GetBook",
-      requestType = com.book.grpc.GetBookRequest.class,
-      responseType = com.book.grpc.BookResponse.class,
+      requestType = com.endpoints.examples.bookstore.GetBookRequest.class,
+      responseType = com.endpoints.examples.bookstore.BookResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.book.grpc.GetBookRequest,
-      com.book.grpc.BookResponse> getGetBookMethod() {
-    io.grpc.MethodDescriptor<com.book.grpc.GetBookRequest, com.book.grpc.BookResponse> getGetBookMethod;
+  public static io.grpc.MethodDescriptor<com.endpoints.examples.bookstore.GetBookRequest,
+      com.endpoints.examples.bookstore.BookResponse> getGetBookMethod() {
+    io.grpc.MethodDescriptor<com.endpoints.examples.bookstore.GetBookRequest, com.endpoints.examples.bookstore.BookResponse> getGetBookMethod;
     if ((getGetBookMethod = BookServiceGrpc.getGetBookMethod) == null) {
       synchronized (BookServiceGrpc.class) {
         if ((getGetBookMethod = BookServiceGrpc.getGetBookMethod) == null) {
           BookServiceGrpc.getGetBookMethod = getGetBookMethod =
-              io.grpc.MethodDescriptor.<com.book.grpc.GetBookRequest, com.book.grpc.BookResponse>newBuilder()
+              io.grpc.MethodDescriptor.<com.endpoints.examples.bookstore.GetBookRequest, com.endpoints.examples.bookstore.BookResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetBook"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.book.grpc.GetBookRequest.getDefaultInstance()))
+                  com.endpoints.examples.bookstore.GetBookRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.book.grpc.BookResponse.getDefaultInstance()))
+                  com.endpoints.examples.bookstore.BookResponse.getDefaultInstance()))
               .setSchemaDescriptor(new BookServiceMethodDescriptorSupplier("GetBook"))
               .build();
         }
@@ -45,29 +45,29 @@ public final class BookServiceGrpc {
     return getGetBookMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.book.grpc.BookAuthorRequest,
-      com.book.grpc.BookResponse> getGetBooksViaAuthorMethod;
+  private static volatile io.grpc.MethodDescriptor<com.endpoints.examples.bookstore.BookAuthorRequest,
+      com.endpoints.examples.bookstore.BookResponse> getGetBooksViaAuthorMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "GetBooksViaAuthor",
-      requestType = com.book.grpc.BookAuthorRequest.class,
-      responseType = com.book.grpc.BookResponse.class,
+      requestType = com.endpoints.examples.bookstore.BookAuthorRequest.class,
+      responseType = com.endpoints.examples.bookstore.BookResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.book.grpc.BookAuthorRequest,
-      com.book.grpc.BookResponse> getGetBooksViaAuthorMethod() {
-    io.grpc.MethodDescriptor<com.book.grpc.BookAuthorRequest, com.book.grpc.BookResponse> getGetBooksViaAuthorMethod;
+  public static io.grpc.MethodDescriptor<com.endpoints.examples.bookstore.BookAuthorRequest,
+      com.endpoints.examples.bookstore.BookResponse> getGetBooksViaAuthorMethod() {
+    io.grpc.MethodDescriptor<com.endpoints.examples.bookstore.BookAuthorRequest, com.endpoints.examples.bookstore.BookResponse> getGetBooksViaAuthorMethod;
     if ((getGetBooksViaAuthorMethod = BookServiceGrpc.getGetBooksViaAuthorMethod) == null) {
       synchronized (BookServiceGrpc.class) {
         if ((getGetBooksViaAuthorMethod = BookServiceGrpc.getGetBooksViaAuthorMethod) == null) {
           BookServiceGrpc.getGetBooksViaAuthorMethod = getGetBooksViaAuthorMethod =
-              io.grpc.MethodDescriptor.<com.book.grpc.BookAuthorRequest, com.book.grpc.BookResponse>newBuilder()
+              io.grpc.MethodDescriptor.<com.endpoints.examples.bookstore.BookAuthorRequest, com.endpoints.examples.bookstore.BookResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetBooksViaAuthor"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.book.grpc.BookAuthorRequest.getDefaultInstance()))
+                  com.endpoints.examples.bookstore.BookAuthorRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.book.grpc.BookResponse.getDefaultInstance()))
+                  com.endpoints.examples.bookstore.BookResponse.getDefaultInstance()))
               .setSchemaDescriptor(new BookServiceMethodDescriptorSupplier("GetBooksViaAuthor"))
               .build();
         }
@@ -126,15 +126,15 @@ public final class BookServiceGrpc {
 
     /**
      */
-    public void getBook(com.book.grpc.GetBookRequest request,
-        io.grpc.stub.StreamObserver<com.book.grpc.BookResponse> responseObserver) {
+    public void getBook(com.endpoints.examples.bookstore.GetBookRequest request,
+        io.grpc.stub.StreamObserver<com.endpoints.examples.bookstore.BookResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetBookMethod(), responseObserver);
     }
 
     /**
      */
-    public void getBooksViaAuthor(com.book.grpc.BookAuthorRequest request,
-        io.grpc.stub.StreamObserver<com.book.grpc.BookResponse> responseObserver) {
+    public void getBooksViaAuthor(com.endpoints.examples.bookstore.BookAuthorRequest request,
+        io.grpc.stub.StreamObserver<com.endpoints.examples.bookstore.BookResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetBooksViaAuthorMethod(), responseObserver);
     }
 
@@ -144,15 +144,15 @@ public final class BookServiceGrpc {
             getGetBookMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.book.grpc.GetBookRequest,
-                com.book.grpc.BookResponse>(
+                com.endpoints.examples.bookstore.GetBookRequest,
+                com.endpoints.examples.bookstore.BookResponse>(
                   this, METHODID_GET_BOOK)))
           .addMethod(
             getGetBooksViaAuthorMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.book.grpc.BookAuthorRequest,
-                com.book.grpc.BookResponse>(
+                com.endpoints.examples.bookstore.BookAuthorRequest,
+                com.endpoints.examples.bookstore.BookResponse>(
                   this, METHODID_GET_BOOKS_VIA_AUTHOR)))
           .build();
     }
@@ -174,16 +174,16 @@ public final class BookServiceGrpc {
 
     /**
      */
-    public void getBook(com.book.grpc.GetBookRequest request,
-        io.grpc.stub.StreamObserver<com.book.grpc.BookResponse> responseObserver) {
+    public void getBook(com.endpoints.examples.bookstore.GetBookRequest request,
+        io.grpc.stub.StreamObserver<com.endpoints.examples.bookstore.BookResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetBookMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void getBooksViaAuthor(com.book.grpc.BookAuthorRequest request,
-        io.grpc.stub.StreamObserver<com.book.grpc.BookResponse> responseObserver) {
+    public void getBooksViaAuthor(com.endpoints.examples.bookstore.BookAuthorRequest request,
+        io.grpc.stub.StreamObserver<com.endpoints.examples.bookstore.BookResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetBooksViaAuthorMethod(), getCallOptions()), request, responseObserver);
     }
@@ -205,14 +205,14 @@ public final class BookServiceGrpc {
 
     /**
      */
-    public com.book.grpc.BookResponse getBook(com.book.grpc.GetBookRequest request) {
+    public com.endpoints.examples.bookstore.BookResponse getBook(com.endpoints.examples.bookstore.GetBookRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetBookMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.book.grpc.BookResponse getBooksViaAuthor(com.book.grpc.BookAuthorRequest request) {
+    public com.endpoints.examples.bookstore.BookResponse getBooksViaAuthor(com.endpoints.examples.bookstore.BookAuthorRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetBooksViaAuthorMethod(), getCallOptions(), request);
     }
@@ -234,16 +234,16 @@ public final class BookServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.book.grpc.BookResponse> getBook(
-        com.book.grpc.GetBookRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.endpoints.examples.bookstore.BookResponse> getBook(
+        com.endpoints.examples.bookstore.GetBookRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetBookMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.book.grpc.BookResponse> getBooksViaAuthor(
-        com.book.grpc.BookAuthorRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.endpoints.examples.bookstore.BookResponse> getBooksViaAuthor(
+        com.endpoints.examples.bookstore.BookAuthorRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetBooksViaAuthorMethod(), getCallOptions()), request);
     }
@@ -270,12 +270,12 @@ public final class BookServiceGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_GET_BOOK:
-          serviceImpl.getBook((com.book.grpc.GetBookRequest) request,
-              (io.grpc.stub.StreamObserver<com.book.grpc.BookResponse>) responseObserver);
+          serviceImpl.getBook((com.endpoints.examples.bookstore.GetBookRequest) request,
+              (io.grpc.stub.StreamObserver<com.endpoints.examples.bookstore.BookResponse>) responseObserver);
           break;
         case METHODID_GET_BOOKS_VIA_AUTHOR:
-          serviceImpl.getBooksViaAuthor((com.book.grpc.BookAuthorRequest) request,
-              (io.grpc.stub.StreamObserver<com.book.grpc.BookResponse>) responseObserver);
+          serviceImpl.getBooksViaAuthor((com.endpoints.examples.bookstore.BookAuthorRequest) request,
+              (io.grpc.stub.StreamObserver<com.endpoints.examples.bookstore.BookResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -299,7 +299,7 @@ public final class BookServiceGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return com.book.grpc.BookProto.getDescriptor();
+      return com.endpoints.examples.bookstore.BookstoreProto.getDescriptor();
     }
 
     @java.lang.Override

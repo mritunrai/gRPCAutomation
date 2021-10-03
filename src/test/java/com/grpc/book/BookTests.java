@@ -1,15 +1,17 @@
 package com.grpc.book;
 
 import client.BookClient;
-import com.book.grpc.BookResponse;
+import com.endpoints.examples.bookstore.BookResponse;
+import exception.AuthorNotFoundException;
+import exception.BookNotFoundException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class BookTests extends BaseTests {
+public class BookTests {
     private BookClient bookClient;
 
     @Test
-    public void getBookTests() {
+    public void getBookTests() throws BookNotFoundException {
         bookClient = new BookClient();
 
         BookResponse bookResponse = bookClient.getBookByISBN(1);
@@ -18,7 +20,7 @@ public class BookTests extends BaseTests {
     }
 
     @Test
-    public void getBookViaAuthor() {
+    public void getBookViaAuthor() throws AuthorNotFoundException {
         bookClient = new BookClient();
 
         BookResponse bookResponse = bookClient.getBookByAuthor("Bob");

@@ -10,13 +10,18 @@ public class GrpcServer {
 
     Server server;
 
+    public static void main(String[] args) throws IOException, InterruptedException {
+        GrpcServer grpcServer = new GrpcServer();
+        grpcServer.createServer();
+    }
+
     public void createServer() throws IOException, InterruptedException {
         server = ServerBuilder.forPort(9090).addService(new BookService()).build();
 
         server.start();
 
         System.out.println("Server started :" + server.getPort());
-        server.awaitTermination();
+       server.awaitTermination();
     }
 
     public void terminateServer() {
