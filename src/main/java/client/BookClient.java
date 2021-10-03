@@ -13,7 +13,7 @@ public class BookClient {
     BookServiceGrpc.BookServiceBlockingStub bookServiceStub;
 
     public BookClient() {
-        channel = ManagedChannelBuilder.forAddress("localhost", 9090).usePlaintext().build();
+        channel = ManagedChannelBuilder.forAddress("localhost", 50055).usePlaintext().build();
         bookServiceStub = BookServiceGrpc.newBlockingStub(channel);
     }
 
@@ -21,10 +21,9 @@ public class BookClient {
         try {
             com.endpoints.examples.bookstore.GetBookRequest getBookRequest = com.endpoints.examples.bookstore.GetBookRequest.newBuilder().setIsbn(ISBN).build();
             return bookServiceStub.getBook(getBookRequest);
-        }catch (Exception ex)
-        {
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
-            throw new BookNotFoundException("Book implementation is not found");
+            throw new BookNotFoundException("Book not found");
         }
     }
 
@@ -32,11 +31,9 @@ public class BookClient {
         try {
             com.endpoints.examples.bookstore.BookAuthorRequest getBookRequest = com.endpoints.examples.bookstore.BookAuthorRequest.newBuilder().setAuthor(authorName).build();
             return bookServiceStub.getBooksViaAuthor(getBookRequest);
-        }
-        catch (Exception ex)
-        {
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
-            throw new AuthorNotFoundException("Author detail not found ");
+            throw new AuthorNotFoundException("Author details not found ");
         }
     }
 }

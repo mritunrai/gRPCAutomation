@@ -11,7 +11,7 @@ public final class BookServiceGrpc {
 
   private BookServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "examples.bookstore.BookService";
+  public static final String SERVICE_NAME = "bookstore.BookService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<com.endpoints.examples.bookstore.GetBookRequest,

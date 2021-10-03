@@ -4,7 +4,7 @@
 package com.endpoints.examples.bookstore;
 
 public interface BookResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:examples.bookstore.BookResponse)
+    // @@protoc_insertion_point(interface_extends:bookstore.BookResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**

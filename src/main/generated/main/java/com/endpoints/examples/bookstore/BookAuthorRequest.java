@@ -4,11 +4,11 @@
 package com.endpoints.examples.bookstore;
 
 /**
- * Protobuf type {@code examples.bookstore.BookAuthorRequest}
+ * Protobuf type {@code bookstore.BookAuthorRequest}
  */
 public  final class BookAuthorRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:examples.bookstore.BookAuthorRequest)
+    // @@protoc_insertion_point(message_implements:bookstore.BookAuthorRequest)
     BookAuthorRequestOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use BookAuthorRequest.newBuilder() to construct.
@@ -67,12 +67,12 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.endpoints.examples.bookstore.BookstoreProto.internal_static_examples_bookstore_BookAuthorRequest_descriptor;
+    return com.endpoints.examples.bookstore.BookstoreProto.internal_static_bookstore_BookAuthorRequest_descriptor;
   }
 
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.endpoints.examples.bookstore.BookstoreProto.internal_static_examples_bookstore_BookAuthorRequest_fieldAccessorTable
+    return com.endpoints.examples.bookstore.BookstoreProto.internal_static_bookstore_BookAuthorRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.endpoints.examples.bookstore.BookAuthorRequest.class, com.endpoints.examples.bookstore.BookAuthorRequest.Builder.class);
   }
@@ -262,20 +262,20 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code examples.bookstore.BookAuthorRequest}
+   * Protobuf type {@code bookstore.BookAuthorRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:examples.bookstore.BookAuthorRequest)
+      // @@protoc_insertion_point(builder_implements:bookstore.BookAuthorRequest)
       com.endpoints.examples.bookstore.BookAuthorRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.endpoints.examples.bookstore.BookstoreProto.internal_static_examples_bookstore_BookAuthorRequest_descriptor;
+      return com.endpoints.examples.bookstore.BookstoreProto.internal_static_bookstore_BookAuthorRequest_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.endpoints.examples.bookstore.BookstoreProto.internal_static_examples_bookstore_BookAuthorRequest_fieldAccessorTable
+      return com.endpoints.examples.bookstore.BookstoreProto.internal_static_bookstore_BookAuthorRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.endpoints.examples.bookstore.BookAuthorRequest.class, com.endpoints.examples.bookstore.BookAuthorRequest.Builder.class);
     }
@@ -304,7 +304,7 @@ private static final long serialVersionUID = 0L;
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.endpoints.examples.bookstore.BookstoreProto.internal_static_examples_bookstore_BookAuthorRequest_descriptor;
+      return com.endpoints.examples.bookstore.BookstoreProto.internal_static_bookstore_BookAuthorRequest_descriptor;
     }
 
     public com.endpoints.examples.bookstore.BookAuthorRequest getDefaultInstanceForType() {
@@ -473,10 +473,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:examples.bookstore.BookAuthorRequest)
+    // @@protoc_insertion_point(builder_scope:bookstore.BookAuthorRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:examples.bookstore.BookAuthorRequest)
+  // @@protoc_insertion_point(class_scope:bookstore.BookAuthorRequest)
   private static final com.endpoints.examples.bookstore.BookAuthorRequest DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new com.endpoints.examples.bookstore.BookAuthorRequest();

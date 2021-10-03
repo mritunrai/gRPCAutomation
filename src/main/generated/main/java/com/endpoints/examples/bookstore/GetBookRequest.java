@@ -4,11 +4,11 @@
 package com.endpoints.examples.bookstore;
 
 /**
- * Protobuf type {@code examples.bookstore.GetBookRequest}
+ * Protobuf type {@code bookstore.GetBookRequest}
  */
 public  final class GetBookRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:examples.bookstore.GetBookRequest)
+    // @@protoc_insertion_point(message_implements:bookstore.GetBookRequest)
     GetBookRequestOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use GetBookRequest.newBuilder() to construct.
@@ -66,12 +66,12 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.endpoints.examples.bookstore.BookstoreProto.internal_static_examples_bookstore_GetBookRequest_descriptor;
+    return com.endpoints.examples.bookstore.BookstoreProto.internal_static_bookstore_GetBookRequest_descriptor;
   }
 
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.endpoints.examples.bookstore.BookstoreProto.internal_static_examples_bookstore_GetBookRequest_fieldAccessorTable
+    return com.endpoints.examples.bookstore.BookstoreProto.internal_static_bookstore_GetBookRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.endpoints.examples.bookstore.GetBookRequest.class, com.endpoints.examples.bookstore.GetBookRequest.Builder.class);
   }
@@ -237,20 +237,20 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code examples.bookstore.GetBookRequest}
+   * Protobuf type {@code bookstore.GetBookRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:examples.bookstore.GetBookRequest)
+      // @@protoc_insertion_point(builder_implements:bookstore.GetBookRequest)
       com.endpoints.examples.bookstore.GetBookRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.endpoints.examples.bookstore.BookstoreProto.internal_static_examples_bookstore_GetBookRequest_descriptor;
+      return com.endpoints.examples.bookstore.BookstoreProto.internal_static_bookstore_GetBookRequest_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.endpoints.examples.bookstore.BookstoreProto.internal_static_examples_bookstore_GetBookRequest_fieldAccessorTable
+      return com.endpoints.examples.bookstore.BookstoreProto.internal_static_bookstore_GetBookRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.endpoints.examples.bookstore.GetBookRequest.class, com.endpoints.examples.bookstore.GetBookRequest.Builder.class);
     }
@@ -279,7 +279,7 @@ private static final long serialVersionUID = 0L;
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.endpoints.examples.bookstore.BookstoreProto.internal_static_examples_bookstore_GetBookRequest_descriptor;
+      return com.endpoints.examples.bookstore.BookstoreProto.internal_static_bookstore_GetBookRequest_descriptor;
     }
 
     public com.endpoints.examples.bookstore.GetBookRequest getDefaultInstanceForType() {
@@ -404,10 +404,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:examples.bookstore.GetBookRequest)
+    // @@protoc_insertion_point(builder_scope:bookstore.GetBookRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:examples.bookstore.GetBookRequest)
+  // @@protoc_insertion_point(class_scope:bookstore.GetBookRequest)
   private static final com.endpoints.examples.bookstore.GetBookRequest DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new com.endpoints.examples.bookstore.GetBookRequest();

@@ -23,9 +23,9 @@ public class BookStoreServer {
         server.blockUntilShutdown();
     }
 
-    private void start() throws IOException {
+    public void start() throws IOException {
         /* The port on which the server should run */
-        int port = 50052;
+        int port = 50055;
         server = ServerBuilder.forPort(port)
                 .addService(new BookStoreServiceImpl())
                 .build()
@@ -46,7 +46,7 @@ public class BookStoreServer {
         });
     }
 
-    private void stop() throws InterruptedException {
+    public void stop() throws InterruptedException {
         if (server != null) {
             server.shutdown().awaitTermination(30, TimeUnit.SECONDS);
         }
@@ -65,33 +65,39 @@ public class BookStoreServer {
 
         @Override
         public void getBook(com.endpoints.examples.bookstore.GetBookRequest request, StreamObserver<com.endpoints.examples.bookstore.BookResponse> responseObserver) {
-            super.getBook(request, responseObserver);
 
             com.endpoints.examples.bookstore.BookResponse.Builder response = com.endpoints.examples.bookstore.BookResponse.newBuilder();
 
             int isbn = request.getIsbn();
 
             if (isbn == 1) {
-                response.setResponseCode("200").setMessage("Success");
+                response.setResponseCode("200").setMessage("Success").build();
             } else {
-                response.setResponseCode("200").setMessage("Failed");
+                response.setResponseCode("200").setMessage("Failed").build();
             }
 
-          //  responseObserver.onCompleted();
+            responseObserver.onNext(response.build());
+
+            responseObserver.onCompleted();
         }
 
         @Override
         public void getBooksViaAuthor(com.endpoints.examples.bookstore.BookAuthorRequest request, StreamObserver<com.endpoints.examples.bookstore.BookResponse> responseObserver) {
-            super.getBooksViaAuthor(request, responseObserver);
-
             com.endpoints.examples.bookstore.BookResponse.Builder response = com.endpoints.examples.bookstore.BookResponse.newBuilder();
 
             String author = request.getAuthor();
 
+            System.out.println("Author Request " + author);
+            logger.info("Author name " + author);
+
             if (author.equals("Bob")) {
-                response.setResponseCode("200").setMessage("Success");
+                response.setResponseCode("200").setMessage("Success").build();
             } else
-                response.setResponseCode("200").setMessage("Failed");
+                response.setResponseCode("200").setMessage("Failed").build();
+
+            responseObserver.onNext(response.build());
+
+            responseObserver.onCompleted();
         }
     }
 }

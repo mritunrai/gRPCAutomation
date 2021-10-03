@@ -4,7 +4,7 @@
 package com.endpoints.examples.bookstore;
 
 public interface BookAuthorRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:examples.bookstore.BookAuthorRequest)
+    // @@protoc_insertion_point(interface_extends:bookstore.BookAuthorRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**

@@ -15,25 +15,20 @@ public final class BookstoreProto {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_examples_bookstore_Book_descriptor;
+    internal_static_bookstore_BookResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_examples_bookstore_Book_fieldAccessorTable;
+      internal_static_bookstore_BookResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_examples_bookstore_BookResponse_descriptor;
+    internal_static_bookstore_GetBookRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_examples_bookstore_BookResponse_fieldAccessorTable;
+      internal_static_bookstore_GetBookRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_examples_bookstore_GetBookRequest_descriptor;
+    internal_static_bookstore_BookAuthorRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_examples_bookstore_GetBookRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_examples_bookstore_BookAuthorRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_examples_bookstore_BookAuthorRequest_fieldAccessorTable;
+      internal_static_bookstore_BookAuthorRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -43,18 +38,16 @@ public final class BookstoreProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\nbook.proto\022\022examples.bookstore\"3\n\004Book" +
-      "\022\014\n\004isbn\030\001 \001(\005\022\r\n\005title\030\002 \001(\t\022\016\n\006author\030" +
-      "\003 \001(\t\"6\n\014BookResponse\022\017\n\007message\030\001 \001(\t\022\025" +
-      "\n\rresponse_code\030\002 \001(\t\"\036\n\016GetBookRequest\022" +
-      "\014\n\004isbn\030\001 \001(\005\"#\n\021BookAuthorRequest\022\016\n\006au" +
-      "thor\030\001 \001(\t2\300\001\n\013BookService\022Q\n\007GetBook\022\"." +
-      "examples.bookstore.GetBookRequest\032 .exam" +
-      "ples.bookstore.BookResponse\"\000\022^\n\021GetBook" +
-      "sViaAuthor\022%.examples.bookstore.BookAuth" +
-      "orRequest\032 .examples.bookstore.BookRespo",
-      "nse\"\000B4\n com.endpoints.examples.bookstor" +
-      "eB\016BookstoreProtoP\001b\006proto3"
+      "\n\nbook.proto\022\tbookstore\"6\n\014BookResponse\022" +
+      "\017\n\007message\030\001 \001(\t\022\025\n\rresponse_code\030\002 \001(\t\"" +
+      "\036\n\016GetBookRequest\022\014\n\004isbn\030\001 \001(\005\"#\n\021BookA" +
+      "uthorRequest\022\016\n\006author\030\001 \001(\t2\234\001\n\013BookSer" +
+      "vice\022?\n\007GetBook\022\031.bookstore.GetBookReque" +
+      "st\032\027.bookstore.BookResponse\"\000\022L\n\021GetBook" +
+      "sViaAuthor\022\034.bookstore.BookAuthorRequest" +
+      "\032\027.bookstore.BookResponse\"\000B:\n com.endpo" +
+      "ints.examples.bookstoreB\016BookstoreProtoP" +
+      "\001\242\002\003HLIb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -68,29 +61,23 @@ public final class BookstoreProto {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_examples_bookstore_Book_descriptor =
+    internal_static_bookstore_BookResponse_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_examples_bookstore_Book_fieldAccessorTable = new
+    internal_static_bookstore_BookResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_examples_bookstore_Book_descriptor,
-        new java.lang.String[] { "Isbn", "Title", "Author", });
-    internal_static_examples_bookstore_BookResponse_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_examples_bookstore_BookResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_examples_bookstore_BookResponse_descriptor,
+        internal_static_bookstore_BookResponse_descriptor,
         new java.lang.String[] { "Message", "ResponseCode", });
-    internal_static_examples_bookstore_GetBookRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_examples_bookstore_GetBookRequest_fieldAccessorTable = new
+    internal_static_bookstore_GetBookRequest_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_bookstore_GetBookRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_examples_bookstore_GetBookRequest_descriptor,
+        internal_static_bookstore_GetBookRequest_descriptor,
         new java.lang.String[] { "Isbn", });
-    internal_static_examples_bookstore_BookAuthorRequest_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_examples_bookstore_BookAuthorRequest_fieldAccessorTable = new
+    internal_static_bookstore_BookAuthorRequest_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_bookstore_BookAuthorRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_examples_bookstore_BookAuthorRequest_descriptor,
+        internal_static_bookstore_BookAuthorRequest_descriptor,
         new java.lang.String[] { "Author", });
   }
 

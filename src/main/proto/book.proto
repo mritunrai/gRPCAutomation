@@ -1,15 +1,15 @@
 syntax = "proto3";
 
-package examples.bookstore;
+package bookstore;
 
 option java_package = "com.endpoints.examples.bookstore";
 option java_multiple_files = true;
 option java_outer_classname = "BookstoreProto";
+option objc_class_prefix = "HLI";
 
-message Book {
-  int32 isbn = 1;
-  string title = 2;
-  string author = 3;
+service BookService {
+  rpc GetBook (GetBookRequest) returns (BookResponse) {}
+  rpc GetBooksViaAuthor (BookAuthorRequest) returns (BookResponse) {}
 }
 
 message BookResponse {
@@ -23,9 +23,4 @@ message GetBookRequest {
 
 message BookAuthorRequest {
   string author = 1;
-}
-
-service BookService {
-  rpc GetBook (GetBookRequest) returns (BookResponse) {}
-  rpc GetBooksViaAuthor (BookAuthorRequest) returns (BookResponse) {}
 }
