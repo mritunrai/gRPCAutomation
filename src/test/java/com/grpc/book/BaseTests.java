@@ -4,7 +4,6 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import server.BookStoreServer;
 
-
 import java.io.IOException;
 
 public class BaseTests {
@@ -15,9 +14,9 @@ public class BaseTests {
         grpcServer.start();
     }
 
-//    @AfterSuite(alwaysRun = true)
-//    public void GRPCTearDown() throws InterruptedException {
-//        BookStoreServer grpcServer = new BookStoreServer();
-//       // grpcServer.stop();
-//    }
+    @AfterSuite(alwaysRun = true)
+    public void GRPCTearDown() throws InterruptedException {
+        BookStoreServer grpcServer = new BookStoreServer();
+        grpcServer.stop();
+    }
 }
