@@ -1,7 +1,10 @@
 package client;
 
 
+import com.endpoints.examples.bookstore.BookResponse;
 import com.endpoints.examples.bookstore.BookServiceGrpc;
+import com.endpoints.examples.bookstore.GetBookRequest;
+import com.endpoints.examples.bookstore.BookAuthorRequest;
 import exception.AuthorNotFoundException;
 import exception.BookNotFoundException;
 import io.grpc.ManagedChannel;
@@ -17,9 +20,9 @@ public class BookClient {
         bookServiceStub = BookServiceGrpc.newBlockingStub(channel);
     }
 
-    public com.endpoints.examples.bookstore.BookResponse getBookByISBN(Integer ISBN) throws BookNotFoundException {
+    public BookResponse getBookByISBN(Integer ISBN) throws BookNotFoundException {
         try {
-            com.endpoints.examples.bookstore.GetBookRequest getBookRequest = com.endpoints.examples.bookstore.GetBookRequest.newBuilder().setIsbn(ISBN).build();
+            GetBookRequest getBookRequest = GetBookRequest.newBuilder().setIsbn(ISBN).build();
             return bookServiceStub.getBook(getBookRequest);
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
@@ -27,9 +30,9 @@ public class BookClient {
         }
     }
 
-    public com.endpoints.examples.bookstore.BookResponse getBookByAuthor(String authorName) throws AuthorNotFoundException {
+    public BookResponse getBookByAuthor(String authorName) throws AuthorNotFoundException {
         try {
-            com.endpoints.examples.bookstore.BookAuthorRequest getBookRequest = com.endpoints.examples.bookstore.BookAuthorRequest.newBuilder().setAuthor(authorName).build();
+            BookAuthorRequest getBookRequest = BookAuthorRequest.newBuilder().setAuthor(authorName).build();
             return bookServiceStub.getBooksViaAuthor(getBookRequest);
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
