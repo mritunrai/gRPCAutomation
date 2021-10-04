@@ -14,7 +14,7 @@ public class BookTests extends BaseTests {
     public void getBookTests()  throws BookNotFoundException {
         bookClient = new BookClient();
 
-        BookResponse bookResponse = bookClient.getBookByISBN(2);
+        BookResponse bookResponse = bookClient.getBookByISBN(1);
 
         Assert.assertEquals(bookResponse.getResponseCode(), "200");
     }
@@ -23,7 +23,7 @@ public class BookTests extends BaseTests {
     public void getBookViaAuthor() throws AuthorNotFoundException {
         bookClient = new BookClient();
 
-        BookResponse bookResponse = bookClient.getBookByAuthor("Bob1");
+        BookResponse bookResponse = bookClient.getBookByAuthor("Bob");
 
         Assert.assertEquals(bookResponse.getResponseCode(), "200");
     }
